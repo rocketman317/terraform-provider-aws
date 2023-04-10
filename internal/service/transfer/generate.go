@@ -1,3 +1,6 @@
+// Copyright (c) HashiCorp, Inc.
+// SPDX-License-Identifier: MPL-2.0
+
 //go:generate go run ../../generate/tagresource/main.go  -IDAttribName=resource_arn -UpdateTagsFunc=UpdateTagsNoIgnoreSystem -WithContext=false
 //go:generate go run ../../generate/tags/main.go -GetTag -ListTags -ListTagsInIDElem=Arn -ServiceTagsSlice -TagInIDElem=Arn -UpdateTags
 //go:generate go run ../../generate/tags/main.go "-TagInCustomVal=Tags(updatedTags)" -TagInIDElem=Arn "-UntagInCustomVal=aws.StringSlice(removedTags.Keys())" -UpdateTags -UpdateTagsFunc=UpdateTagsNoIgnoreSystem -- update_tags_no_system_ignore_gen.go
