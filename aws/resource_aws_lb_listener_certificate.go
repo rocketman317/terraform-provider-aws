@@ -23,16 +23,14 @@ func resourceAwsLbListenerCertificate() *schema.Resource {
 
 		Schema: map[string]*schema.Schema{
 			"listener_arn": {
-				Type:         schema.TypeString,
-				Required:     true,
-				ForceNew:     true,
-				ValidateFunc: validateArn,
+				Type:     schema.TypeString,
+				Required: true,
+				ForceNew: true,
 			},
 			"certificate_arn": {
-				Type:         schema.TypeString,
-				Required:     true,
-				ForceNew:     true,
-				ValidateFunc: validateArn,
+				Type:     schema.TypeString,
+				Required: true,
+				ForceNew: true,
 			},
 		},
 	}
