@@ -533,6 +533,10 @@ func expandAcmCertificateOptions(l []interface{}) *acm.CertificateOptions {
 }
 
 func flattenAcmCertificateOptions(co *acm.CertificateOptions) []interface{} {
+	if co == nil {
+		return []interface{}{}
+	}
+
 	m := map[string]interface{}{
 		"certificate_transparency_logging_preference": aws.StringValue(co.CertificateTransparencyLoggingPreference),
 	}
